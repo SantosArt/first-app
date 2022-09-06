@@ -63,10 +63,23 @@ function showTemp(response) {
   let wind = document.querySelector("#windSpeed");
   wind.innerHTML = ` ${windSpeed} km/h `;
   let description = response.data.weather[0].description;
-  let descript = document.querySelector("#description");
-  descript.innerHTML = `${description}`;
-}
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${description}`;
 
+  console.log(response.data.weather[0].main);
+  let iconElement = document.querySelector("#icon");
+  let iconValue = response.data.weather[0].main.toLowerCase();
+
+  if (iconValue === "clouds") {
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", "images/cloud.png");
+    if (iconValue === "rain") {
+      let iconElement = document.querySelector("#icon");
+      iconElement.setAttribute("src", "images/rain.png");
+    }
+  }
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+}
 function search(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#city-text-input");
