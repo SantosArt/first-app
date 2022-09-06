@@ -13,11 +13,11 @@
       crossorigin="anonymous"/>
       <link rel="stylesheet" href="src/style.css">
   </head>
-  <body><img src="images/Logo 1.jpg" alt="Santos Art Logo" width="200" />
+  <body><img id="logo" src="images/Logo 1.jpg" alt="Santos Art Logo" width="200" />
 <h1>New York</h1>
 <h2>10:45, Tuesday</h2>
 <h3>06 September 2022</h3>
-<form>
+<form class="searchCity">
   <input
     type="text"
     placeholder="Type a city..."
@@ -30,7 +30,7 @@
 <section>
   <div class="row">
     <div class="col-6">
-      <div>22 °C | °F</div>
+      <div><span id="temp-now">22</span>    °C | °F</div>
     </div>
     <div class="col-6">
       <img src="images/Sunny_weather.png" alt="Sunny" width="100" />
