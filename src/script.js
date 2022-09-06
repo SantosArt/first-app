@@ -73,6 +73,7 @@ function showTemp(response) {
   if (iconValue === "clouds") {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", "images/cloud.png");
+  } else {
     if (iconValue === "rain") {
       let iconElement = document.querySelector("#icon");
       iconElement.setAttribute("src", "images/rain.png");
