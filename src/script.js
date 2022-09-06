@@ -47,7 +47,7 @@ currentTime.innerHTML = `${currentHour}:${currentMin}, `;
 function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let tempNow = document.querySelector("#temp-now");
-  tempNow.innerHTML = `${temp}°C`;
+  tempNow.innerHTML = `${temp}`;
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   let maxTemp = Math.round(response.data.main.temp_max);
@@ -82,7 +82,7 @@ form.addEventListener("submit", search);
 function showCurrentTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let currentTempElement = document.querySelector("#temp-now");
-  currentTempElement.innerHTML = `${currentTemp}°C`;
+  currentTempElement.innerHTML = `${currentTemp}`;
   let currentCity = response.data.name;
   let currentCityElement = document.querySelector("h1");
   currentCityElement.innerHTML = currentCity;
@@ -98,8 +98,7 @@ function showCurrentTemp(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let wind = document.querySelector("#windSpeed");
   wind.innerHTML = ` ${windSpeed} km/h `;
-
-  let description = toUpperCase(response.data.weather[0].description);
+  let description = response.data.weather[0].description;
   let descript = document.querySelector("#description");
   descript.innerHTML = `${description}`;
 }
