@@ -2,6 +2,13 @@ body {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-size: 300%;
+  background-color: #c8d8e4;
+ 
+}
+#logo{
+    padding: 10px;
+    margin: 20px 0 0 0;
+    border-radius: 15px;
 }
 section {
   max-width: 600px;
@@ -9,11 +16,21 @@ section {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  border-color: #2b6777;
+  background-color: #a7c3d8;
+color:  #ffffff ;
 }
 h1 {
   margin-top: 20px;
   font-size: 52px;
-  color: rgb(1, 48, 83);
+  color: #2b6777;
   text-align: center;
   text-shadow: 1px 1px 1px rgb(125, 158, 180);
 }
+#temp-now {
+  font-size: 70px;
+}
+.searchCity {
+  margin: 0 auto;
+  padding: 20px 10px 10px 10px;
+  margin: 10px 20px;
