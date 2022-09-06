@@ -1,14 +1,11 @@
 body {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-size: 300%;
-  background-color: #c8d8e4;
- 
 }
-#logo{
-    padding: 10px;
-    margin: 20px 0 0 0;
-    border-radius: 15px;
+#logo {
+  padding: 10px;
+  margin: 20px 0 0 0;
+  border-radius: 15px;
 }
 section {
   max-width: 600px;
@@ -16,16 +13,21 @@ section {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
-  border-color: #2b6777;
-  background-color: #a7c3d8;
-color:  #ffffff ;
+  border-color: rgb(2, 2, 2);
 }
 h1 {
   margin-top: 20px;
-  font-size: 52px;
-  color: #2b6777;
+  margin-bottom: 20px;
+  font-size: 55px;
+  color: rgb(218, 165, 32);
   text-align: center;
   text-shadow: 1px 1px 1px rgb(125, 158, 180);
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 14px;
 }
 #temp-now {
   font-size: 70px;
@@ -34,3 +36,43 @@ h1 {
   margin: 0 auto;
   padding: 20px 10px 10px 10px;
   margin: 10px 20px;
+}
+#buttonSearch {
+  color: rgb(218, 165, 32);
+  background-color: #080808;
+  transition: all 200ms ease-in-out;
+}
+#buttonSearch:hover {
+  color: rgb(218, 165, 32);
+  background-color: #ffffff;
+  transition: all 200ms ease-in-out;
+}
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 20px;
+  text-align: center;
+}
+#days {
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px;
+  color: rgb(218, 165, 32);
+  background-color: #080808;
+  border-radius: 5px;
+}
+
+#date {
+  font-size: 14px;
+  margin: 8px;
+}
+.infos {
+  font-weight: bold;
+}
