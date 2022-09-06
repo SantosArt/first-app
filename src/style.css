@@ -47,6 +47,9 @@ h3 {
   background-color: #ffffff;
   transition: all 200ms ease-in-out;
 }
+#myLocation {
+  cursor: pointer;
+}
 .units {
   position: relative;
   font-size: 16px;
