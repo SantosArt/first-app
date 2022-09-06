@@ -15,9 +15,9 @@
   </head>
   <body><img id="logo" src="images/Logo 3 vector.jpg" alt="Santos Art Logo" width="150" />
 <h1>New York</h1>
-<h2><span id="currentTime">10:45,</span><span id="today">Tuesday</span></h2>
-<h3 id="currentDate">06 September 2022</h3>
-<form class="searchCity" id="search-form">
+<h2>10:45, Tuesday</h2>
+<h3>06 September 2022</h3>
+<form class="searchCity">
   <input
     type="text"
     placeholder="Type a city..."
@@ -25,14 +25,12 @@
     autofocus="on"
     id="city-text-input"
   />
-  <input id="buttonSearch" type="submit" value="search" />
-  <img id="myLocation" src="images/Location-pin.jpg" alt="My Location" width="30"/>
+  <input id="buttonSearch" type="submit" value="search" /><img src="images/Location-pin.jpg" alt="My Location" width="30"/>
 </form>
 <section>
   <div class="row">
     <div class="col-6">
       <div><span id="temp-now">22</span><span class="units">°C | °F</span></div>
-      <div id="description">Clear</div>
     </div>
     <div class="col-6">
       <img src="images/Sunny_weather.png" alt="Sunny" width="100" />
@@ -42,14 +40,14 @@
   <div class="row">
     <div class="col-6">
       <ul>
-        <li><span class="infos">Max.</span><span id="tempMax">22°C</span></li>
-        <li><small><span class="infos">Min. </span><span id="tempMin">12°C</span></small></li>
+        <li><span class="infos">Max.</span> 22°C</li>
+        <li><small><span class="infos">Min. </span>12°C</small></li>
       </ul>
     </div>
     <div class="col-6">
       <ul>
-        <li><span class="infos">Humidity: </span><span id="humidityValue">40 %</span>%</li>
-        <li><span class="infos">Wind: </span><span id="windSpeed">10 km/h</span></li>
+        <li><span class="infos">Humidity:</span> 40 %</li>
+        <li><span class="infos">Wind:</span> 10 km/h</li>
       </ul>
     </div>
   </div>
@@ -85,7 +83,5 @@
     <a href="https://github.com/SantosArt/my-first-weather-app" target="_blank">
 Open-source code
 </a>by Veronica Santos</footer>
-</footer>
-<script src="src/script.js"></script>
-</body>
+</footer></body>
 </html>
