@@ -26,6 +26,10 @@ h1 {
 h2 {
   font-size: 20px;
 }
+#lastUpdate {
+  font-size: 13px;
+  margin: 8px;
+}
 h3 {
   font-size: 14px;
 }
@@ -55,6 +59,10 @@ h3 {
   font-size: 16px;
   top: -34px;
 }
+#description {
+  font-size: 23px;
+  text-transform: capitalize;
+}
 
 li {
   list-style: none;
@@ -66,7 +74,7 @@ li {
 #days {
   font-size: 18px;
   margin: 10px;
-  padding: 10px;
+  padding: 8px;
   color: rgb(218, 165, 32);
   background-color: #080808;
   border-radius: 5px;
