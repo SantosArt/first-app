@@ -136,8 +136,6 @@ function displayFahrenheit(event) {
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temp-now");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  let c = document.querySelector("#celsius");
-  c.innerHTML = <Stong>°C</Stong>;
 }
 let celsiusTemperature = null;
 
