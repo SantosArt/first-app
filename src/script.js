@@ -65,8 +65,6 @@ function showTemp(response) {
   let description = response.data.weather[0].description;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = `${description}`;
-
-  console.log(response.data.weather[0].main);
   let iconElement = document.querySelector("#icon");
   let iconValue = response.data.weather[0].main.toLowerCase();
 
@@ -80,6 +78,7 @@ function showTemp(response) {
     }
   }
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
 }
 function search(event) {
   event.preventDefault();
@@ -115,6 +114,7 @@ function showCurrentTemp(response) {
   let description = response.data.weather[0].description;
   let descript = document.querySelector("#description");
   descript.innerHTML = `${description}`;
+  celsiusTemperature = response.data.main.temp;
 }
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -128,4 +128,27 @@ function currentLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 let button = document.querySelector("#myLocation");
+
 button.addEventListener("click", currentLocation);
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temp-now");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  let c = document.querySelector("#celsius");
+  c.innerHTML = <Stong>°C</Stong>;
+}
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temp-now");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
