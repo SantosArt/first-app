@@ -66,17 +66,13 @@ function showTemp(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = `${description}`;
   let iconElement = document.querySelector("#icon");
-  let iconValue = response.data.weather[0].main.toLowerCase();
+  let iconValue = response.data.weather[0].icon.toLowerCase();
 
-  if (iconValue === "clouds") {
-    let iconElement = document.querySelector("#icon");
-    iconElement.setAttribute("src", "images/cloud.png");
-  } else {
-    if (iconValue === "rain") {
-      let iconElement = document.querySelector("#icon");
-      iconElement.setAttribute("src", "images/rain.png");
-    }
-  }
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconValue}@2x.png`
+  );
+
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
 }
