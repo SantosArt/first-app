@@ -52,10 +52,10 @@ function showTemp(response) {
   h1.innerHTML = response.data.name;
   let maxTemp = Math.round(response.data.main.temp_max);
   let max = document.querySelector("#tempMax");
-  max.innerHTML = ` ${maxTemp}°C `;
+  max.innerHTML = ` ${maxTemp}° `;
   let minTemp = Math.round(response.data.main.temp_min);
   let min = document.querySelector("#tempMin");
-  min.innerHTML = ` ${minTemp}°C `;
+  min.innerHTML = ` ${minTemp}°`;
   let humidityValue = Math.round(response.data.main.humidity);
   let humidity = document.querySelector("#humidityValue");
   humidity.innerHTML = `${humidityValue}`;
@@ -104,10 +104,10 @@ function showCurrentTemp(response) {
   currentCityElement.innerHTML = currentCity;
   let maxTemp = Math.round(response.data.main.temp_max);
   let max = document.querySelector("#tempMax");
-  max.innerHTML = ` ${maxTemp}°C `;
+  max.innerHTML = ` ${maxTemp}° `;
   let minTemp = Math.round(response.data.main.temp_min);
   let min = document.querySelector("#tempMin");
-  min.innerHTML = ` ${minTemp}°C `;
+  min.innerHTML = ` ${minTemp}° `;
   let humidityValue = Math.round(response.data.main.humidity);
   let humidity = document.querySelector("#humidityValue");
   humidity.innerHTML = `${humidityValue}`;
@@ -134,17 +134,6 @@ function currentLocation() {
 let button = document.querySelector("#myLocation");
 
 button.addEventListener("click", currentLocation);
-
-function displayFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#temp-now");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-let celsiusTemperature = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 function displayCelsius(event) {
   event.preventDefault();
