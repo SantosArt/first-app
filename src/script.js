@@ -118,6 +118,7 @@ function showCurrentTemp(response) {
   let descript = document.querySelector("#description");
   descript.innerHTML = `${description}`;
   celsiusTemperature = response.data.main.temp;
+  getForecast(response.data.coord);
 }
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -167,9 +168,9 @@ function displayForecast(response) {
             <div id="icon"><img src="http://openweathermap.org/img/wn/${
               forecastDay.weather[0].icon
             }@2x.png" alt="" width="42"/></div>
-            <div><span>${Math.round(
+            <div><span><strong>${Math.round(
               forecastDay.temp.max
-            )}° </span>|<span class="minimum"> ${Math.round(
+            )}° </strong></span>|<span class="minimum"> ${Math.round(
           forecastDay.temp.min
         )}°</span></div>
         
