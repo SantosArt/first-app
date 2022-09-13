@@ -75,6 +75,14 @@ function showTemp(response) {
 
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
+}
+function getForecast(coordinates) {
+  let apiKey = "c85bec28379fe50c898d7cf523259179";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 function search(event) {
   event.preventDefault();
@@ -147,24 +155,23 @@ function displayCelsius(event) {
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", displayCelsius);
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["thu", "Fri", "Sat", "Sun"];
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2">
-          <ul>
-            <li id="days"><strong>${day}</strong></li>
-            <li id="icon">🌞</li>
-            <li><span>15°</span>|<span class="minimum"> 10°</span></li>
-          </ul>
+          
+            <div id="days"><strong>${day}</strong></div>
+            <div id="icon">🌞</div>
+            <div><span>15°</span>|<span class="minimum"> 10°</span></div>
+        
         </div>
        `;
-    forecastHTML = forecastHTML + `</div>`;
   });
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
