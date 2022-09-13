@@ -5,13 +5,9 @@ body {
 #zone {
   border: 1px solid #dadde1;
   border-radius: 10px;
-  border-color: rgb(2, 2, 2);
   max-width: 600px;
   margin: 10px auto;
   padding: 20px;
-  background-image: linear-gradient(to top right, rgb(2, 48, 71), #c7c683);
-
-  color: #ffffff;
   opacity: 0.9;
 }
 #logo {
@@ -23,7 +19,7 @@ section {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  border: 1px solid #dadde1;
+
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
   background-image: linear-gradient(to top right, rgb(2, 48, 71), #c7c683);
@@ -101,7 +97,6 @@ li {
   padding: 8px;
   color: rgb(0, 0, 0);
 
-  background-color: rgb(142, 202, 230);
   border-radius: 5px;
   font-weight: normal;
 }
@@ -113,9 +108,7 @@ li {
 .infos {
   font-weight: bold;
 }
-.minimum {
-  font-size: 13px;
-}
+
 .gitHub {
   color: black;
 }
