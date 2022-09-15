@@ -78,6 +78,7 @@ function showTemp(response) {
 
   getForecast(response.data.coord);
 }
+
 function getForecast(coordinates) {
   let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
@@ -118,6 +119,17 @@ function showCurrentTemp(response) {
   let descript = document.querySelector("#description");
   descript.innerHTML = `${description}`;
   celsiusTemperature = response.data.main.temp;
+  let iconElement = document.querySelector("#icon");
+  let iconValue = response.data.weather[0].icon.toLowerCase();
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconValue}@2x.png`
+  );
+
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
+
   getForecast(response.data.coord);
 }
 function showPosition(position) {
@@ -141,8 +153,6 @@ function displayCelsius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsius);
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -175,3 +185,45 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+function cityDefault(response) {
+  let temp = Math.round(response.data.main.temp);
+  let tempNow = document.querySelector("#temp-now");
+  tempNow.innerHTML = `${temp}`;
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = response.data.name;
+  let maxTemp = Math.round(response.data.main.temp_max);
+  let max = document.querySelector("#tempMax");
+  max.innerHTML = ` ${maxTemp}° `;
+  let minTemp = Math.round(response.data.main.temp_min);
+  let min = document.querySelector("#tempMin");
+  min.innerHTML = ` ${minTemp}°`;
+  let humidityValue = Math.round(response.data.main.humidity);
+  let humidity = document.querySelector("#humidityValue");
+  humidity.innerHTML = `${humidityValue}`;
+  let windSpeed = Math.round(response.data.wind.speed);
+  let wind = document.querySelector("#windSpeed");
+  wind.innerHTML = ` ${windSpeed} km/h `;
+  let description = response.data.weather[0].description;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = `${description}`;
+  let iconElement = document.querySelector("#icon");
+  let iconValue = response.data.weather[0].icon.toLowerCase();
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${iconValue}@2x.png`
+  );
+
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemperature = response.data.main.temp;
+
+  getForecast(response.data.coord);
+}
+function defaultCity(event) {
+  let defaultCity = "Lisbon";
+  let units = "metric";
+  let apiKey = "c85bec28379fe50c898d7cf523259179";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(cityDefault);
+}
+defaultCity();
