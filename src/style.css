@@ -8,7 +8,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(41, 155, 248), #206f91);
+  background-image: linear-gradient(to top right, rgb(47, 143, 221), #7ac3e2);
   opacity: 0.9;
   color: #ffffff;
 }
@@ -17,7 +17,7 @@ body {
   border-radius: 10px;
   max-width: 600px;
   margin: 10px auto;
-  padding: 20px;
+  padding: 5px 20px;
   opacity: 0.9;
 }
 
@@ -27,17 +27,17 @@ section {
   padding: 20px;
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(41, 155, 248), #206f91);
+  background-image: linear-gradient(to top right, rgb(47, 143, 221), #7ac3e2);
   opacity: 0.9;
   color: #ffffff;
 }
 #forecast {
   max-width: 600px;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px;
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(41, 155, 248), #206f91);
+  background-image: linear-gradient(to top right, rgb(47, 143, 221), #7ac3e2);
   opacity: 0.9;
   color: #ffffff;
 }
