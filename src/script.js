@@ -1,49 +1,3 @@
-let now = new Date();
-let weekdays = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let weekday = weekdays[now.getDay()];
-let today = document.querySelector("#today");
-today.innerHTML = `${weekday}`;
-let currentDay = now.getDate();
-if (currentDay < 10) {
-  currentDay = `0${currentDay}`;
-}
-let months = [
-  "01",
-  "02",
-  "03",
-  "04",
-  "05",
-  "06",
-  "07",
-  "08",
-  "09",
-  "10",
-  "11",
-  "12",
-];
-let currentMonth = months[now.getMonth()];
-let currentYear = now.getFullYear();
-let currentDate = document.querySelector("#currentDate");
-currentDate.innerHTML = `${currentDay}.${currentMonth}.${currentYear}`;
-let currentHour = now.getHours();
-if (currentHour < 10) {
-  currentHour = `0${currentHour}`;
-}
-let currentMin = now.getMinutes();
-if (currentMin < 10) {
-  currentMin = `0${currentMin}`;
-}
-let currentTime = document.querySelector("#currentTime");
-currentTime.innerHTML = `${currentHour}:${currentMin}, `;
-
 function showTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let tempNow = document.querySelector("#temp-now");
@@ -93,9 +47,6 @@ function search(event) {
   axios.get(apiUrl).then(showTemp);
 }
 
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
-
 function showCurrentTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let currentTempElement = document.querySelector("#temp-now");
@@ -143,10 +94,6 @@ function showPosition(position) {
 function currentLocation() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-let button = document.querySelector("#myLocation");
-
-button.addEventListener("click", currentLocation);
-
 function displayCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temp-now");
@@ -176,6 +123,7 @@ function displayForecast(response) {
         </div>
        `;
   });
+
   function formatDay(timestamp) {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
@@ -185,6 +133,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+
 function cityDefault(response) {
   let temp = Math.round(response.data.main.temp);
   let tempNow = document.querySelector("#temp-now");
@@ -219,6 +168,7 @@ function cityDefault(response) {
 
   getForecast(response.data.coord);
 }
+
 function defaultCity(event) {
   let defaultCity = "Lisbon";
   let units = "metric";
@@ -226,4 +176,57 @@ function defaultCity(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${defaultCity}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(cityDefault);
 }
+
+let now = new Date();
+let weekdays = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let weekday = weekdays[now.getDay()];
+let today = document.querySelector("#today");
+today.innerHTML = `${weekday}`;
+let currentDay = now.getDate();
+if (currentDay < 10) {
+  currentDay = `0${currentDay}`;
+}
+let months = [
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+  "12",
+];
+let currentMonth = months[now.getMonth()];
+let currentYear = now.getFullYear();
+let currentDate = document.querySelector("#currentDate");
+currentDate.innerHTML = `${currentDay}.${currentMonth}.${currentYear}`;
+let currentHour = now.getHours();
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
+let currentMin = now.getMinutes();
+if (currentMin < 10) {
+  currentMin = `0${currentMin}`;
+}
+let currentTime = document.querySelector("#currentTime");
+currentTime.innerHTML = `${currentHour}:${currentMin}, `;
+
+let button = document.querySelector("#myLocation");
+
+button.addEventListener("click", currentLocation);
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
 defaultCity();
