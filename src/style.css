@@ -8,7 +8,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(41, 155, 248), #c7e6f3);
+  background-image: linear-gradient(to top right, rgb(41, 155, 248), #206f91);
   opacity: 0.9;
   color: #ffffff;
 }
@@ -27,7 +27,7 @@ section {
   padding: 20px;
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(41, 155, 248), #c7e6f3);
+  background-image: linear-gradient(to top right, rgb(41, 155, 248), #206f91);
   opacity: 0.9;
   color: #ffffff;
 }
@@ -37,7 +37,7 @@ section {
   padding: 20px;
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(41, 155, 248), #c7e6f3);
+  background-image: linear-gradient(to top right, rgb(41, 155, 248), #206f91);
   opacity: 0.9;
   color: #ffffff;
 }
