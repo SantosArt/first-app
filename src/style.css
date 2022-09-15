@@ -2,6 +2,16 @@ body {
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+#main {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: rgb(2, 2, 2);
+  background-image: linear-gradient(to top right, rgb(41, 155, 248), #273f49);
+  opacity: 0.9;
+  color: #ffffff;
+}
 #zone {
   border: 1px solid #dadde1;
   border-radius: 10px;
@@ -10,19 +20,24 @@ body {
   padding: 20px;
   opacity: 0.9;
 }
-#logo {
-  padding: 10px;
-  margin: 10px 0 0 0;
-  border-radius: 15px;
-}
+
 section {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-
   border-radius: 10px;
   border-color: rgb(2, 2, 2);
-  background-image: linear-gradient(to top right, rgb(2, 48, 71), #c7c683);
+  background-image: linear-gradient(to top right, rgb(41, 155, 248), #c7e6f3);
+  opacity: 0.9;
+  color: #ffffff;
+}
+#forecast {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: rgb(2, 2, 2);
+  background-image: linear-gradient(to top right, rgb(41, 155, 248), #c7e6f3);
   opacity: 0.9;
   color: #ffffff;
 }
@@ -47,12 +62,7 @@ h3 {
 #temp-now {
   font-size: 70px;
 }
-#fahrenheit:hover {
-  cursor: pointer;
-}
-#celsius {
-  cursor: pointer;
-}
+
 .searchCity {
   margin: 0 auto;
   padding: 20px 10px 10px 10px;
