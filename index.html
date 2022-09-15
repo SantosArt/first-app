@@ -15,7 +15,8 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div id="zone">
+    
+    <div id="zone"><div id="main">
     <h1>New York</h1>
     <h2>
       <div id="lastUpdate">Last updated:</div>
@@ -33,12 +34,12 @@
       <input id="buttonSearch" type="submit" value="search" />
       <img
         id="myLocation"
-        src="images/Location-pin.jpg"
+        src="images/Location-pin.png"
         alt="My Location"
         width="30"
       />
     </form>
-
+</div>
     <section>
       <div class="row">
         <div class="col-6">
@@ -74,24 +75,24 @@
         <div class="col-6">
           <ul>
             <li>
-              <span class="infos">Humidity: </span
-              ><span id="humidityValue">40 </span>%
+              <span class="infos">Humidity:     </span
+              ><span id="humidityValue">40 </span> %
             </li>
             <li>
-              <span class="infos">Wind: </span
+              <span class="infos">Wind:      </span
               ><span id="windSpeed">10 km/h</span>
             </li>
           </ul>
         </div>
       </div>
-      <hr />
+      </section>
+    
       <div id="forecast">
       
       </div>
-      </div>
-    </section>
+       
 
-    <footer>
+       <footer>
       <small
         ><a
           class="gitHUb"
@@ -101,7 +102,10 @@
           Open-source code </a
         >by Veronica Santos
       </small>
-    </footer>
+    </footer> 
+    </div>
+   
+  
 
     <script src="src/script.js"></script>
   </body>
